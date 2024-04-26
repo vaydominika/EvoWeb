@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="~/css/feedpage.css">
+    <script src="~/js/feedpage.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/5b788c8dd4.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Social Platform</title>
+
+</head>
+<body>
+    <!-- Navigációs sáv -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">EvoWeb</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/feed">Home</a></li>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><i class="fa-regular fa-user"></i> Profile</a></li>
+                <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <!-- Fő tartalom -->
+    <div class="container" id="post-container">
+        <!-- A posztok betöltése AJAX-szal -->
+    </div>
+
+    <div class="container">
+        <!-- Posztok listája -->
+        <div class="post">
+            <h2>Aladár</h2>
+            <p>Teszt1</p>
+            <!-- Itt jöhetnek a képek, videók, stb. -->
+        </div>
+        <div class="post">
+            <h2>Julianna</h2>
+            <p>teszt</p>
+            <!-- Itt jöhetnek a képek, videók, stb. -->
+        </div>
+    </div>
+</body>
+</html>
+

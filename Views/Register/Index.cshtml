@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="~/css/registerpage.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="~/js/registerpage.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="left-side">
+            <img src="~/img/loginpage.png" alt="Kép">
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="right-side">
+
+            <form>
+
+                <h2>Register</h2>
+
+                <div class="alert alert-success d-none" id="successful-register" role="alert">
+                    Sikeres regisztráció!
+                </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control textbox" id="firstname" placeholder="firstname" required>
+                                <label for="firstname">First Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control textbox" id="lastname" placeholder="lastname" required>
+                                <label for="lastname">Last Name</label>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control textbox" id="email" placeholder="name@example.com" required>
+                    <label for="email">Email address</label>
+                    <span class="badge textbox text-bg-danger unavailable d-none" id="email-unavailable">Foglalt e-mail</span>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control textbox" id="username" placeholder="username" required>
+                    <label for="email">Username</label>
+                    <span class="badge textbox text-bg-danger unavailable d-none" id="username-unavailable">Foglalt felhasználónév</span>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control textbox" id="password" placeholder="password" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Tooltip on bottom" required>
+                            <label for="password">Password</label>                       
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control textbox" id="passwordconfirm" placeholder="passwordconfirm" required>
+                            <label for="passwordconfirm">Password*</label>
+                        </div>
+                    </div>                   
+                </div> 
+
+                <div class="mb-3">
+                    <button class="btn button" onClick="if(validateForm(event)) { register(event); }">Register</button>
+                    <p class="already-registered">Already registered?<a href="/Login"> Log In</a></p>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>

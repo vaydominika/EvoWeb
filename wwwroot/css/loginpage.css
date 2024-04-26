@@ -1,0 +1,136 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+p {
+    text-align: center;
+    padding-right: 50%;
+}
+
+i {
+    float: right;
+    padding-right: 73%;
+}
+
+a {
+    color: #BFD8AF !important;
+    text-decoration: none !important;
+}
+
+    a:active, a:visited {
+        color: #D4E7C5 !important;
+    }
+
+    a:hover {
+        color: #99BC85 !important;
+    }
+
+.container {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-side {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+    .left-side img {
+        border-radius: 20px;
+        max-width: 60%;
+        max-height: 60%;
+    }
+
+.divider {
+    height: 50%;
+    width: 2px;
+    margin: 3%;
+    background-color: #BFD8AF;
+}
+
+.right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    overflow: hidden !important; /* A tartalom elrejtése, amíg nincs szükség rá */
+    animation: slideIn 1s forwards, fadeIn 0.5s forwards; /* Animációk hozzáadása */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-10%);
+        width: 0; /* A kezdeti szélesség 0 */
+    }
+
+    to {
+        transform: translateX(0);
+        width: 80%; /* Az animáció végén a teljes szélesség */
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* A kezdeti átlátszatlanság 0 */
+    }
+
+    to {
+        opacity: 1; /* Az animáció végén teljesen átlátszatlan */
+    }
+}
+
+/* Bejelentkezési felület stílusai */
+.right-side form {
+    width: 80%;
+    max-width: 300px;
+    padding: 20px;
+}
+
+.right-side h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.signup-link {
+    padding-top: 8%;
+    float: right;
+    font-size: smaller;
+}
+
+.signup-with {
+    float: right;
+    font-size: large;
+}
+
+.forgot-password {
+    margin-top: 4%;
+    float: right;
+    font-size: smaller;
+}
+
+.right-side form label,
+.right-side form input[type="text"],
+.right-side form input[type="password"] {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.button {
+    background-color: #E1F0DA !important;
+    border-radius: 10px;
+}
+.button:hover {
+        background-color: #BFD8AF !important;
+}
+
+.textbox {
+    border-radius: 10px;
+    border-color: #BFD8AF !important;
+}

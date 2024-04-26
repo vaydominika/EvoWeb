@@ -1,0 +1,96 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.container {
+    margin-top: 500px;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.post {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+    .post h2 {
+        font-size: 18px;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    .post p {
+        font-size: 16px;
+        color: #666;
+        margin-top: 0;
+    }
+
+/* Navbar color */
+.navbar-inverse {
+    background-color: #333;
+    border-color: #080808;
+}
+
+    /* Navbar brand color */
+    .navbar-inverse .navbar-brand {
+        color: #9d9d9d;
+    }
+
+        .navbar-inverse .navbar-brand:hover,
+        .navbar-inverse .navbar-brand:focus {
+            color: #fff;
+        }
+
+    /* Navbar links color */
+    .navbar-inverse .navbar-nav > li > a {
+        color: #9d9d9d;
+    }
+
+        .navbar-inverse .navbar-nav > li > a:hover,
+        .navbar-inverse .navbar-nav > li > a:focus {
+            color: #fff;
+        }
+
+    /* Active link color */
+    .navbar-inverse .navbar-nav > .active > a,
+    .navbar-inverse .navbar-nav > .active > a:hover,
+    .navbar-inverse .navbar-nav > .active > a:focus {
+        background-color: #080808;
+        color: #fff;
+    }
+
+    /* Sign Up and Login link color */
+    .navbar-inverse .navbar-nav.navbar-right > li > a {
+        color: #9d9d9d;
+    }
+
+        .navbar-inverse .navbar-nav.navbar-right > li > a:hover,
+        .navbar-inverse .navbar-nav.navbar-right > li > a:focus {
+            color: #fff;
+        }
+
+        /* Font Awesome icon color */
+        .navbar-inverse .navbar-nav.navbar-right > li > a .fa {
+            color: #9d9d9d;
+        }
+
+        .navbar-inverse .navbar-nav.navbar-right > li > a:hover .fa,
+        .navbar-inverse .navbar-nav.navbar-right > li > a:focus .fa {
+            color: #fff;
+        }
+
+
