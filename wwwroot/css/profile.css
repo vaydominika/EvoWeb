@@ -1,0 +1,200 @@
+﻿body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu {
+    display: none;
+}
+
+.input-group:focus-within .dropdown-menu {
+    display: block;
+}
+
+.container {
+    display: flex;
+    height: calc(100% - 50px); /* 50px magas navbar, állítsd be megfelelően */
+    align-items: stretch;
+}
+
+.left-section, .middle-section, .right-section {
+    flex: auto;
+    height: 100%;
+}
+
+.separator {
+    width: 1px;
+    background-color: #D4E7C5;
+    height: 100%;
+    margin: 0;
+}
+
+.middle-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card {
+    width: 100%;
+    height: 10%;
+    border-radius: 10px;
+    box-shadow: 0 1px 1px #D4E7C5;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative; /* Hozzáadva */
+}
+
+.banner {
+    margin-top: -396px;
+    height: 150% !important;
+    border-radius: 0px 0px 10px 10px !important;
+    width: 100%;
+    align-content: center;
+    object-fit: cover;
+}
+
+.profile-picture {
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    object-fit: scale-down;
+    margin-top: 50px; /* Negatív margin a felemelkedéshez */
+    border: 3px solid white;
+    border-radius: 50%;
+    position: relative; /* Hozzáadva */
+    z-index: 1; /* Hozzáadva, hogy a profilkép legyen a banner alatt */
+}
+
+.name {
+    font-size: 24px;
+    margin: 0;
+}
+
+.username {
+    color: #888;
+    margin: 5px 0;
+}
+
+.bio {
+    font-size: 14px;
+    color: #555;
+    margin: 15px 0;
+}
+
+.stats {
+    margin-top: 20px;
+}
+
+    .stats div {
+        text-align: center;
+    }
+
+.number {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.label {
+    font-size: 14px;
+    color: #888 !important;
+}
+
+.navbar {
+    background-color: #D4E7C5;
+    border-radius: 0px 0px 10px 10px !important;
+    margin-bottom: 0 !important;
+}
+
+.input-group {
+    width: 200px;
+    position: relative;
+}
+
+    .input-group .btn {
+        position: absolute;
+        width: 40px;
+    }
+
+li, ul {
+    list-style: none;
+}
+
+a {
+    color: forestgreen !important;
+    text-decoration: none !important;
+}
+
+    a:hover {
+        color: darkgreen;
+    }
+
+.card {
+    border-radius: 10px !important;
+    background-color: #D4E7C5;
+    outline-color: darkgreen;
+    margin-top: 30px;
+}
+
+.post {
+    width: 40rem !important;
+}
+
+.post-img {
+    width: 100% !important;
+}
+
+.postreaction {
+    width: 15% !important;
+    font-size: 160%;
+}
+
+.liked {
+    color: darkred;
+}
+
+img {
+    border-radius: 10px !important;
+}
+
+.profile-divider {
+    width: 80%; /* Állítsd be a kívánt szélességet */
+    height: 1px;
+    background-color: #D4E7C5;
+    margin: 20px auto; /* Középre igazítás */
+}
+
+.profile-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.profile-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: #99BC85 !important;
+    font-weight: bold !important;
+}
+
+    .profile-button:hover {
+        background-color: #D4E7C5 !important;
+        border-color: #BFD8AF !important;
+    }
+
+.active {
+    background-color: #D4E7C5 !important;
+    border-color: #BFD8AF !important;
+    color: #99BC85 !important;
+}
+
+.profiledata {
+    z-index: 6;
+    margin-top: -100px;
+}

@@ -31,3 +31,20 @@ window.onload = function () {
     loadUserPosts();
 }
 
+function like(id) {
+    var likebutton = document.getElementById(id);
+
+    likebutton.className = "fa-solid fa-heart postreaction liked";
+    likebutton.onclick = function () {
+        unlike(id);
+    };
+}
+
+function unlike(id) {
+    var likebutton = document.getElementById(id);
+
+    likebutton.className = "fa-regular fa-heart postreaction";
+    likebutton.onclick = function () {
+        like(id);
+    };
+}

@@ -39,13 +39,6 @@ function login(event) {
         }
     };
 
-    await newRequest.send();
-
-    if (success) {
-        redirect()
+    newRequest.send();
     }
-}
 
-function redirect() {
-    window.location.href = "/feed";
-}

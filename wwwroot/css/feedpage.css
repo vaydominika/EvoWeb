@@ -1,96 +1,92 @@
-﻿body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+﻿.input-group {
+    width: 200px;
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    width: 100% !important;
+}
+
+.input-group:focus-within .dropdown-menu {
+    display: block;
+}
+
+.input-group .btn {
+    position: absolute;
+    width: 40px;
 }
 
 .navbar {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
+    background-color: #D4E7C5;
+    border-radius: 0px 0px 10px 10px !important;
+    margin-bottom: 0 !important;
+}
+
+li, ul {
+    list-style: none;
+}
+
+a {
+    color: forestgreen !important;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: darkgreen;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-    margin-top: 500px;
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 0 20px;
+    display: flex;
+    height: 100%;
+    align-items: stretch;
+}
+
+.left-section, .middle-section, .right-section {
+    flex: auto;
+    height: 100%;
+}
+
+.separator {
+    width: 1px;
+    background-color: #D4E7C5;
+    height: 100%;
+    margin: 0; /* Eltolás a két oldalon */
+}
+
+.card {
+    border-radius: 10px !important;
+    background-color: #D4E7C5;
+    outline-color: darkgreen;
+    margin-top: 30px;
+    margin-left: 10% !important;
 }
 
 .post {
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 20px;
+    width : 40rem !important;
 }
 
-    .post h2 {
-        font-size: 18px;
-        margin-top: 0;
-        margin-bottom: 10px;
-    }
-
-    .post p {
-        font-size: 16px;
-        color: #666;
-        margin-top: 0;
-    }
-
-/* Navbar color */
-.navbar-inverse {
-    background-color: #333;
-    border-color: #080808;
+.post-img {
+    width: 100% !important;
 }
 
-    /* Navbar brand color */
-    .navbar-inverse .navbar-brand {
-        color: #9d9d9d;
-    }
+.postreaction {
+    width: 15% !important;
+    font-size: 160%; 
+}
 
-        .navbar-inverse .navbar-brand:hover,
-        .navbar-inverse .navbar-brand:focus {
-            color: #fff;
-        }
+.liked {
+    color: darkred;
+}
 
-    /* Navbar links color */
-    .navbar-inverse .navbar-nav > li > a {
-        color: #9d9d9d;
-    }
-
-        .navbar-inverse .navbar-nav > li > a:hover,
-        .navbar-inverse .navbar-nav > li > a:focus {
-            color: #fff;
-        }
-
-    /* Active link color */
-    .navbar-inverse .navbar-nav > .active > a,
-    .navbar-inverse .navbar-nav > .active > a:hover,
-    .navbar-inverse .navbar-nav > .active > a:focus {
-        background-color: #080808;
-        color: #fff;
-    }
-
-    /* Sign Up and Login link color */
-    .navbar-inverse .navbar-nav.navbar-right > li > a {
-        color: #9d9d9d;
-    }
-
-        .navbar-inverse .navbar-nav.navbar-right > li > a:hover,
-        .navbar-inverse .navbar-nav.navbar-right > li > a:focus {
-            color: #fff;
-        }
-
-        /* Font Awesome icon color */
-        .navbar-inverse .navbar-nav.navbar-right > li > a .fa {
-            color: #9d9d9d;
-        }
-
-        .navbar-inverse .navbar-nav.navbar-right > li > a:hover .fa,
-        .navbar-inverse .navbar-nav.navbar-right > li > a:focus .fa {
-            color: #fff;
-        }
+img {
+    border-radius: 10px !important;
+}
 
 
