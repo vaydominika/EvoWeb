@@ -15,6 +15,7 @@ namespace EvoWeb.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.CurrentContext = HttpContext;
             return View();
         }
 

@@ -36,39 +36,6 @@
     align-items: center;
 }
 
-.profile-card {
-    width: 100%;
-    height: 10%;
-    border-radius: 10px;
-    box-shadow: 0 1px 1px #D4E7C5;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: relative; /* Hozzáadva */
-}
-
-.banner {
-    margin-top: -396px;
-    height: 150% !important;
-    border-radius: 0px 0px 10px 10px !important;
-    width: 100%;
-    align-content: center;
-    object-fit: cover;
-}
-
-.profile-picture {
-    background-color: white;
-    width: 100px;
-    height: 100px;
-    object-fit: scale-down;
-    margin-top: 50px; /* Negatív margin a felemelkedéshez */
-    border: 3px solid white;
-    border-radius: 50%;
-    position: relative; /* Hozzáadva */
-    z-index: 1; /* Hozzáadva, hogy a profilkép legyen a banner alatt */
-}
 
 .name {
     font-size: 24px;
@@ -157,21 +124,23 @@ a {
     color: darkred;
 }
 
-img {
-    border-radius: 10px !important;
+.btn-outline-primary:focus {
+    outline: none !important;
 }
 
+/* Innentől kezdődnek a profilhoz tartozó CSS tag-ek, próbáltam állítgatni a magasságokat mindenhol, de vagy elcsúsztatják lefele teljesen, vagy nem történik vele semmi... */
+
 .profile-divider {
-    width: 80%; /* Állítsd be a kívánt szélességet */
+    width: 80%;
     height: 1px;
     background-color: #D4E7C5;
-    margin: 20px auto; /* Középre igazítás */
+    margin: 20px auto;
 }
 
 .profile-buttons {
     margin-top: 20px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .profile-button {
@@ -181,6 +150,7 @@ img {
     text-decoration: none;
     color: #99BC85 !important;
     font-weight: bold !important;
+    margin: 0 5px 0 5px; /* Gombok közötti hely:)) */
 }
 
     .profile-button:hover {
@@ -197,4 +167,38 @@ img {
 .profiledata {
     z-index: 6;
     margin-top: -100px;
+}
+
+.profile-card {
+    width: 100%;
+    height: 10%;
+    border-radius: 10px;
+    box-shadow: 0 1px 1px #D4E7C5;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative; /* Hozzáadva */
+}
+
+.banner {
+    margin-top: -396px;
+    height: 150% !important;
+    border-radius: 0px 0px 10px 10px !important;
+    width: 100%;
+    align-content: center;
+    object-fit: cover;
+}
+
+.profile-picture {
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    object-fit: scale-down;
+    margin-top: 50px; /* Negatív margin a felemelkedéshez */
+    border: 3px solid white;
+    border-radius: 50%;
+    position: relative; /* Hozzáadva */
+    z-index: 1; /* Hozzáadva, hogy a profilkép legyen a banner alatt */
 }

@@ -1,4 +1,37 @@
-﻿<nav class="navbar bg-body-tertiary fixed-top">
+﻿@using EvoWeb.Core;
+@using Microsoft.AspNetCore.Mvc;
+
+
+<nav class="navbar bg-body-tertiary fixed-top">
+
+    <script>
+            // Function to get cookie by name
+            function getCookie(name) {
+                var cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    var cookies = document.cookie.split(';');
+                    for (var i = 0; i < cookies.length; i++) {
+                        var cookie = cookies[i].trim();
+                        // Check if this cookie is the one we are looking for
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+
+
+        window.onload = function () {
+            
+            var selfprofile = document.getElementById("self-profile");
+            selfprofile.href = "/profile?user=" + getCookie('self');
+
+        };
+
+    </script>
+
     <div class="container-fluid">
         <a class="navbar-brand" href="/feed">EvoWeb</a>
         <div class="input-group">
@@ -15,7 +48,7 @@
                 <i class="fa-regular fa-user"></i> Profile
             </a>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/profile"><i class="fa-regular fa-user"></i> Your Profile</a></li>
+                <li><a id="self-profile" class="dropdown-item" href="/profile"><i class="fa-regular fa-user"></i> Your Profile</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="/settings"><i class="fa-solid fa-bars"></i> Settings</a></li>
                 <li><a class="dropdown-item" href="#"><i class="fa-solid fa-wand-magic-sparkles"></i> Themes</a></li>

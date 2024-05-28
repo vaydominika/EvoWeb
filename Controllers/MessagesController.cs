@@ -9,9 +9,11 @@ namespace EvoWeb.Controllers
         public async Task<IActionResult> Index()
         {
             bool valid = await Valid();
+            ViewBag.CurrentContext = HttpContext;
 
             if (valid)
             {
+
                 return View();
             }
             else

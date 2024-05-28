@@ -9,7 +9,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
 <body>
     @{
@@ -24,6 +23,25 @@
         </div>
         <div class="separator"></div>
         <div class="middle-section">
+
+            <div class="post-window">
+                <div class="textarea-container">
+                    <textarea class="form-control autosize-textarea" placeholder="Mit szeretnél megosztani?" maxlength="256"></textarea>
+                    <div class="character-counter">0</div> <!-- Karakter számláló -->
+                </div>
+
+                <div class="profile-divider"></div>
+                    <div class="text-center">
+                        <label for="postImage" type="button" class="btn btn-outline-primary feed-button"><i class="fas fa-image"></i></label>
+                        <input type="file" class="form-control-file" id="postImage" style="display: none;">
+
+                        <label for="postFile" type="button" class="btn btn-outline-primary feed-button"><i class="fas fa-file"></i></label>
+                        <input type="file" class="form-control-file" id="postFile" style="display: none;">
+
+                        <button type="button" class="btn btn-outline-primary feed-button">Post</button>
+                    </div>
+                </div>
+
             <div class="card post">
                 <div class="card-header text-center">
                     <i class="fa-solid fa-at"></i> User
@@ -44,7 +62,7 @@
                     <i class="fa-solid fa-at"></i> User
                 </div>
                 <div class="card-body">
-                    <img class="post-img" src="https://download.cdn-shop.com/media/web_images/uk/my-picture/structured-data/framed-picture-4x3.jpg" />
+                    <img src="https://download.cdn-shop.com/media/web_images/uk/my-picture/structured-data/framed-picture-4x3.jpg" />
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 </div>
                 <div class="card-footer text-body-secondary text-center">

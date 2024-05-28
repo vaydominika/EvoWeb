@@ -48,3 +48,32 @@ function unlike(id) {
         like(id);
     };
 }
+
+window.onload = function () {
+    // Minden textarea-re alkalmazzuk a funkcionalitást, amiknek van 'autosize-textarea' osztályuk
+    var textareas = document.querySelectorAll('.autosize-textarea');
+    textareas.forEach(function (textarea) {
+        textarea.style.height = 'auto'; // Állítsuk a magasságot autóra
+        textarea.style.height = (textarea.scrollHeight) + 'px'; // Állítsuk a magasságot a szükséges méretre
+
+        // Karakterszámláló hozzáadása
+        var charCount = textarea.parentElement.querySelector('.character-counter');
+
+        // Amikor változik a tartalom a szövegdobozban
+        textarea.addEventListener('input', function () {
+            if (this.scrollHeight <= 200) {
+                this.style.height = 'auto'; // Állítsuk a magasságot autóra
+                this.style.height = (this.scrollHeight) + 'px'; // Állítsuk a magasságot a szükséges méretre
+            }
+
+            // Frissítsük a karakter számlálót
+            var currentLength = this.value.length;
+            charCount.textContent = currentLength;
+
+            // Ellenőrizzük, hogy elérte-e a maximális karakterszámot
+            charCount.classList.toggle('exceeded', currentLength >= 256);
+        });
+    });
+};
+
+

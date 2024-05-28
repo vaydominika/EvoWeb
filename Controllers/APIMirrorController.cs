@@ -20,6 +20,7 @@ namespace EvoWeb.Controllers
             if (result.error == false)
             {
                 CookieManager.CreateCookie(HttpContext, "session_id", result.sessionid, 365);
+                CookieManager.CreateCookie(HttpContext, "self", username, 365);
             }
 
             if (result != null)

@@ -1,0 +1,16 @@
+﻿.user-list img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.user-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+    .user-list li img {
+        border-radius: 40px;
+        margin-right: 10px;
+    }
