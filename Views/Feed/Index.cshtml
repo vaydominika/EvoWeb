@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="~/css/feedpage.css">
     <script src="~/js/feedpage.js"></script>
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/5b788c8dd4.js" crossorigin="anonymous"></script>
@@ -26,7 +25,7 @@
 
             <div class="post-window">
                 <div class="textarea-container">
-                    <textarea class="form-control autosize-textarea" placeholder="Mit szeretnél megosztani?" maxlength="256"></textarea>
+                    <textarea class="form-control autosize-textarea" id="post-area" placeholder="Mit szeretnél megosztani?" maxlength="256"></textarea>
                     <div class="character-counter">0</div> <!-- Karakter számláló -->
                 </div>
 
@@ -40,11 +39,11 @@
 
                         <button type="button" class="btn btn-outline-primary feed-button">Post</button>
                     </div>
-                </div>
+            </div>
 
             <div class="card post">
                 <div class="card-header text-center">
-                    <i class="fa-solid fa-at"></i> User
+                    <p class="card-text"> <img src="https://cdn.reigdev.hu/evoweb/img/generic-avatar.jpg" alt="User 1" class="user-post"> <i class="fa-solid fa-at"></i> User </p>
                 </div>
                 <div class="card-body">
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -59,10 +58,10 @@
 
             <div class="card post">
                 <div class="card-header text-center">
-                    <i class="fa-solid fa-at"></i> User
+                    <p class="card-text"> <img src="https://cdn.reigdev.hu/evoweb/img/generic-avatar.jpg" alt="User 1" class="user-post"> <i class="fa-solid fa-at"></i> User </p>
                 </div>
                 <div class="card-body">
-                    <img src="https://download.cdn-shop.com/media/web_images/uk/my-picture/structured-data/framed-picture-4x3.jpg" />
+                    <img src="https://download.cdn-shop.com/media/web_images/uk/my-picture/structured-data/framed-picture-4x3.jpg" class="post-img"/>
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 </div>
                 <div class="card-footer text-body-secondary text-center">

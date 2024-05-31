@@ -1,4 +1,33 @@
-﻿function loadUserPosts() {
+﻿window.onload = function () {
+    // Minden textarea-re alkalmazzuk a funkcionalitást, amiknek van 'autosize-textarea' osztályuk
+    console.log("elindut");
+    var textareas = document.querySelectorAll('.autosize-textarea');
+    textareas.forEach(function (textarea) {
+        textarea.style.height = 'auto'; // Állítsuk a magasságot autóra
+        textarea.style.height = (textarea.scrollHeight) + 'px'; // Állítsuk a magasságot a szükséges méretre
+
+        // Karakterszámláló hozzáadása
+        var charCount = textarea.parentElement.querySelector('.character-counter');
+
+        // Amikor változik a tartalom a szövegdobozban
+        textarea.addEventListener('input', function () {
+            console.log("it");
+            if (this.scrollHeight <= 200) {
+                this.style.height = 'auto'; // Állítsuk a magasságot autóra
+                this.style.height = (this.scrollHeight) + 'px'; // Állítsuk a magasságot a szükséges méretre
+            }
+
+            // Frissítsük a karakter számlálót
+            var currentLength = this.value.length;
+            charCount.innerHTML = currentLength;
+
+            // Ellenőrizzük, hogy elérte-e a maximális karakterszámot
+            charCount.classList.toggle('exceeded', currentLength >= 256);
+        });
+    });
+};
+
+function loadUserPosts() {
     // AJAX kérést küldünk a szervernek a felhasználó posztjainak betöltésére
     var xhr = new XMLHttpRequest();
     xhr.open('GET', '/api/posts', true);
@@ -26,11 +55,6 @@ function displayPosts(posts) {
     });
 }
 
-// Oldal betöltésekor automatikusan betöltjük a felhasználó posztjait
-window.onload = function () {
-    loadUserPosts();
-}
-
 function like(id) {
     var likebutton = document.getElementById(id);
 
@@ -49,31 +73,5 @@ function unlike(id) {
     };
 }
 
-window.onload = function () {
-    // Minden textarea-re alkalmazzuk a funkcionalitást, amiknek van 'autosize-textarea' osztályuk
-    var textareas = document.querySelectorAll('.autosize-textarea');
-    textareas.forEach(function (textarea) {
-        textarea.style.height = 'auto'; // Állítsuk a magasságot autóra
-        textarea.style.height = (textarea.scrollHeight) + 'px'; // Állítsuk a magasságot a szükséges méretre
-
-        // Karakterszámláló hozzáadása
-        var charCount = textarea.parentElement.querySelector('.character-counter');
-
-        // Amikor változik a tartalom a szövegdobozban
-        textarea.addEventListener('input', function () {
-            if (this.scrollHeight <= 200) {
-                this.style.height = 'auto'; // Állítsuk a magasságot autóra
-                this.style.height = (this.scrollHeight) + 'px'; // Állítsuk a magasságot a szükséges méretre
-            }
-
-            // Frissítsük a karakter számlálót
-            var currentLength = this.value.length;
-            charCount.textContent = currentLength;
-
-            // Ellenőrizzük, hogy elérte-e a maximális karakterszámot
-            charCount.classList.toggle('exceeded', currentLength >= 256);
-        });
-    });
-};
 
 

@@ -1,52 +1,23 @@
 ﻿@using EvoWeb.Core;
 @using Microsoft.AspNetCore.Mvc;
 
-
+<link rel="stylesheet" href="~/css/navbar.css" />
+<link rel="stylesheet" href="~/css/feedpage.css" />
+<link rel="stylesheet" href="~/css/rightleftpanel.css" />
 <nav class="navbar bg-body-tertiary fixed-top">
 
-    <script>
-            // Function to get cookie by name
-            function getCookie(name) {
-                var cookieValue = null;
-                if (document.cookie && document.cookie !== '') {
-                    var cookies = document.cookie.split(';');
-                    for (var i = 0; i < cookies.length; i++) {
-                        var cookie = cookies[i].trim();
-                        // Check if this cookie is the one we are looking for
-                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                            break;
-                        }
-                    }
-                }
-                return cookieValue;
-            }
-
-
-        window.onload = function () {
-            
-            var selfprofile = document.getElementById("self-profile");
-            selfprofile.href = "/profile?user=" + getCookie('self');
-
-        };
-
-    </script>
 
     <div class="container-fluid">
         <a class="navbar-brand" href="/feed">EvoWeb</a>
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search..." aria-label="search">
+            <input type="text" class="form-control" placeholder="Search..." id="searchbox" aria-label="search">
             <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="button-addon2"><i class="fa-solid fa-magnifying-glass"></i></button>
-            <div class="dropdown-menu" aria-labelledby="searchDropdown">
-                <a class="dropdown-item" href="#">Option 1</a>
-                <a class="dropdown-item" href="#">Option 2</a>
-                <a class="dropdown-item" href="#">Option 3</a>
+            <div class="dropdown-menu" id="quicksearch" aria-labelledby="searchDropdown">
             </div>
         </div>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fa-regular fa-user"></i> Profile
-            </a>
+                <i class="fa-regular fa-user"></i> Profile</a>
             <ul class="dropdown-menu">
                 <li><a id="self-profile" class="dropdown-item" href="/profile"><i class="fa-regular fa-user"></i> Your Profile</a></li>
                 <li><hr class="dropdown-divider"></li>
@@ -57,4 +28,78 @@
             </ul>
         </li>
     </div>
+
+    <script>
+        // Function to get cookie by name
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    // Check if this cookie is the one we are looking for
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        var quicksearch = document.getElementById("quicksearch");
+        var searchbox = document.getElementById("searchbox");
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var selfprofile = document.getElementById("self-profile");
+            selfprofile.href = "/profile?user=" + getCookie('self');
+
+            searchbox.addEventListener('input', function () {
+                console.log("searched for " + searchbox.value);
+                quicksearch.innerHTML = "";
+                autoComplete(searchbox.value);
+
+            });
+        });
+        
+
+        function autoComplete(query) {
+
+            quicksearch.innerHTML = "";
+            var loginURL = "http://localhost:5232/apimirror/v1/SearchUserMirror/?query=" + query;
+
+            var newRequest = new XMLHttpRequest();
+            newRequest.open('GET', loginURL, true);
+            newRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+            newRequest.onload = function () {
+
+                quicksearch.innerHTML = "";
+                
+                if (newRequest.status >= 200 && newRequest.status < 400) {
+                    var response = JSON.parse(newRequest.responseText);
+
+                    for (var i = 0; i < response.results.length; i++) {
+
+                            var result = response.results[i];
+
+                            var option = document.createElement("a");
+                            option.setAttribute("class", "dropdown-item");
+                            option.setAttribute("href", "/profile?user=" + result.username);
+                            option.textContent = result.displayName + " (" + result.username + ")";
+                            quicksearch.innerHTML += option.outerHTML;
+
+                    }
+                }
+                else {
+
+                }
+
+
+            };
+
+            newRequest.send();
+        }
+
+    </script>
 </nav>

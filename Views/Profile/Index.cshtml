@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/5b788c8dd4.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="~/css/feedpage.css">
-    <link rel="stylesheet" href="~/css/profile.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/profile.css">
 </head>
 <body>
     @{
         Html.RenderPartial("Navbar");
     }
-
     <div class="container">
         <div class="left-section">
             <!-- Tartalom a bal oldalon -->
@@ -20,44 +18,49 @@
                 Html.RenderPartial("LeftPanel");
             }
         </div>
+
         <div class="separator"></div>
-        <div class="middle-section">
 
-            <div class="profile-card text-center">   
-                
-                <img src="https://cdn.delmagyar.hu/2024/01/cUwxqgSHlvEZUxThu_8NLTk_rA0g6At2B1gjIY5XS18/fill/700/394/no/1/aHR0cHM6Ly9jbXNjZG4uYXBwLmNvbnRlbnQucHJpdmF0ZS9jb250ZW50LzVhNGM5M2M3MTdlNzQ0OGRiYWVmNTk2N2ZiNDllNTY3.jpg" class="banner" />
+        <div class="middle-section">           
+            <div class="profile-card text-center">
+                <img src="@ViewBag.BannerURL" class="banner" alt="Banner kép">
+                             
+                <div class="settings">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
 
-                <!-- Innen kezdődik maga a profil, ami külön div-be van téve a middle-sectionon belül, hogy külön tudjam kezelni, annyi problémám van vele, hogy nagyon hosszú az egész magasságilag és CSS-ben lehetséges, hogy el van állítva valami, sajnos nem találtam meg azóta sem :-( az ehhez tartozó CSS a css/profile.css file tartalmazza, és betettem legalulra a direkt ehhez fűződő CSS tag-eket. -->
                 <div class="card-body profiledata">
-                    <img src="https://cdn.reigdev.hu/evoweb/img/generic-avatar.jpg" alt="Profilkép" class="rounded-circle img-fluid mb-3 profile-picture">
-                    <h1 class="card-title name">Név</h1>
-                    <p class="card-text username">felhasználónév</p>
-                    <p class="card-text bio">Ez egy rövid bemutatkozás. Írj ide valami érdekeset magadról.</p>
+                    <img src="@ViewBag.AvatarURL" alt="Profilkép" class="rounded-circle img-fluid mb-3 profile-picture">
+
+                    <button type="button" class="btn btn-primary followed-button"><i class="fa-solid fa-check tickbutton"></i></button>
+
+                    <h1 class="card-title name">@ViewBag.DisplayName</h1>
+                    <p class="card-text pronouns badge text-bg-secondary">@ViewBag.Pronouns</p>
+                    <p class="card-text username"><i class="fa-solid fa-at"></i> @ViewBag.Username</p>
+                    <p class="card-text bio">@ViewBag.Bio</p>
                     <div class="d-flex justify-content-around stats">
                         <div>
-                            <span class="number">123</span>
+                            <span class="number">@ViewBag.Followers</span>
                             <span class="label">Követők</span>
                         </div>
                         <div>
-                            <span class="number">456</span>
+                            <span class="number">@ViewBag.Following</span>
                             <span class="label">Követések</span>
                         </div>
                     </div>
 
-                    <div class="profile-divider"></div> <!-- Vízszintes elválasztó -->
-                    <div class="btn-group" role="group" aria-label="Basic outlined example">
-                        <div class="profile-buttons">
-                            <button type="button" class="btn btn-outline-primary active profile-button">Posts</button>
-                            <button type="button" class="btn btn-outline-primary profile-button">Liked</button>
-                            <button type="button" class="btn btn-outline-primary profile-button">Tagged</button>
-                        </div>
+                    <div class="profile-divider"></div>
+                    <div class="profile-button">
+                        <button type="button" class="btn btn-outline-primary active profile-card-button">Posts</button>
+                        <button type="button" class="btn btn-outline-primary profile-card-button">Liked</button>
+                        <button type="button" class="btn btn-outline-primary profile-card-button">Tagged</button>
                     </div>
                 </div>
             </div>
-            <!-- Eddig tart a profile-card class -->
         </div>
-        
+
         <div class="separator"></div>
+
         <div class="right-section">
             <!-- Tartalom a jobb oldalon -->
             @{
@@ -65,7 +68,6 @@
             }
         </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>

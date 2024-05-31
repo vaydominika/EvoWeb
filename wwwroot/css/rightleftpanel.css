@@ -14,3 +14,19 @@
         border-radius: 40px;
         margin-right: 10px;
     }
+
+li, ul {
+    list-style: none;
+}
+
+a {
+    color: forestgreen !important;
+    text-decoration: none !important;
+}
+
+
+    a:hover {
+        color: darkgreen !important;
+    }
+
+

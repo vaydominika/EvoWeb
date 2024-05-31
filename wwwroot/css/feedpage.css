@@ -1,42 +1,4 @@
-﻿.input-group {
-    width: 200px;
-    position: relative;
-}
-
-.dropdown-menu {
-    display: none;
-    width: 100% !important;
-}
-
-.input-group:focus-within .dropdown-menu {
-    display: block;
-}
-
-.input-group .btn {
-    position: absolute;
-    width: 40px;
-}
-
-.navbar {
-    background-color: #D4E7C5;
-    border-radius: 0px 0px 10px 10px !important;
-    margin-bottom: 0 !important;
-}
-
-li, ul {
-    list-style: none;
-}
-
-a {
-    color: forestgreen !important;
-    text-decoration: none !important;
-}
-
-a:hover {
-    color: darkgreen;
-}
-
-body, html {
+﻿body, html {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -44,19 +6,27 @@ body, html {
 
 .container {
     display: flex;
-    height: 100%;
-    align-items: stretch;
+    height: 100vh; /* Teljes magasság kitöltése */
 }
 
-.left-section, .middle-section, .right-section {
-    flex: auto;
-    height: 100%;
+.left-section, .right-section {
+    flex: 1; /* 1 arányú növekedés */
+    max-width: 25%; /* Maximum 30% szélesség */
+    min-width: 25%; /* Minimum 30% szélesség */
+}
+
+.middle-section {
+    flex: 1; /* 1 arányú növekedés */
+    max-width: 50%; /* Maximum 40% szélesség */
+    min-width: 50%; /* Minimum 40% szélesség */
+    border-right: 1px solid #D4E7C5;
+    border-left: 1px solid #D4E7C5;
 }
 
 .separator {
     width: 1px;
     background-color: #D4E7C5;
-    height: 100%;
+    height: 100vh; /* Teljes magasság kitöltése */
     margin: 0; /* Eltolás a két oldalon */
 }
 
@@ -67,19 +37,36 @@ body, html {
     margin: 30px auto !important;
 }
 
+.post-username {
+
+}
+
 .post {
-    width : 40rem !important;
+    width: 50rem !important;
     margin: auto;
 }
 
-.post img {
-    width: 100% !important;
-    border-radius: 10px !important;
+    .post-img {
+        width: 100% !important;
+        border-radius: 10px !important;
+    }
+
+.user-post {
+    border-radius: 80px;
+    width: 40px !important;
+    height: 40px;
+    object-fit: cover;
+    display: inline !important;
+}
+
+.post-username {
+    vertical-align: central;
+    display: inline !important;
 }
 
 .postreaction {
     width: 15% !important;
-    font-size: 160%; 
+    font-size: 160%;
 }
 
 .liked {
@@ -89,7 +76,6 @@ body, html {
 .post-window {
     border-radius: 0px 0px 10px 10px;
     width: 100%;
-    margin: auto;
     padding: 20px;
     background-color: white;
     border-bottom: 1px solid #D4E7C5;
@@ -107,14 +93,13 @@ body, html {
     }
 
     .post-window .form-control {
-        border-radius: 5px;
+        border-radius: 10px;
     }
 
     .post-window .btn-primary {
-        border-radius: 5px;
+        border-radius: 10px;
         width: 15%;
     }
-
 
 .profile-divider {
     width: 80%; /* Állítsd be a kívánt szélességet */
@@ -130,6 +115,7 @@ body, html {
     color: #99BC85 !important;
     font-weight: bold !important;
     font-size: 130% !important;
+    border-radius: 10px !important;
 }
 
     .feed-button:hover {
@@ -142,9 +128,10 @@ body, html {
 }
 
 .autosize-textarea {
-    width: calc(100% - 10px); /* A textarea szélessége a konténer szélessége mínusz a karakter számláló szélessége és némi hely a jobb oldalon */
     resize: none;
     padding-right: 40px !important;
+    width: 50rem;
+    margin: auto;
 }
 
 .textarea-container {
@@ -155,11 +142,11 @@ body, html {
 .character-counter {
     position: absolute;
     bottom: 2px;
-    right: 15px; /* Balra toltuk a karakter számlálót */
+    right: 30px; /* Balra toltuk a karakter számlálót */
     color: #000;
 }
-
 
 .exceeded {
     color: red;
 }
+
