@@ -6,6 +6,7 @@
     <script src="https://kit.fontawesome.com/5b788c8dd4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/css/profile.css">
+    <script src="~/js/profilepage.js"></script>
 </head>
 <body>
     @{
@@ -32,7 +33,7 @@
                 <div class="card-body profiledata">
                     <img src="@ViewBag.AvatarURL" alt="Profilkép" class="rounded-circle img-fluid mb-3 profile-picture">
 
-                    <button type="button" class="btn btn-primary followed-button"><i class="fa-solid fa-check tickbutton"></i></button>
+                    <button type="button" id="follow" onclick="follow();" class="btn btn-primary follow-button shadow-none"><i class="fa-solid fa-plus plusbutton" id="icon"></i></button>
 
                     <h1 class="card-title name">@ViewBag.DisplayName</h1>
                     <p class="card-text pronouns badge text-bg-secondary">@ViewBag.Pronouns</p>
@@ -51,9 +52,9 @@
 
                     <div class="profile-divider"></div>
                     <div class="profile-button">
-                        <button type="button" class="btn btn-outline-primary active profile-card-button">Posts</button>
-                        <button type="button" class="btn btn-outline-primary profile-card-button">Liked</button>
-                        <button type="button" class="btn btn-outline-primary profile-card-button">Tagged</button>
+                        <button id="posts" onclick="posts();" type="button" class="btn btn-outline-primary profile-card-button shadow-none active">Posts</button>
+                        <button id="liked" onclick="liked();" type="button" class="btn btn-outline-primary profile-card-button shadow-none">Liked</button>
+                        <button id="tagged" onclick="tagged();" type="button" class="btn btn-outline-primary profile-card-button shadow-none">Tagged</button>
                     </div>
                 </div>
             </div>

@@ -96,7 +96,7 @@
     color: #fff !important;
     width: 3.1rem;
     height: 3.1rem;
-    border: 1px solid #BFD8AF;
+    border: 1px solid #BFD8AF !important;
 }
 
 .followed-button {
@@ -122,6 +122,12 @@
     border: 1px solid #fff !important;
 }
 
+.follow-button:focus, .follow-button:active, followed-button:focus, followed-button:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 1px solid #BFD8AF !important;
+}
+
 .profile-card-button {
     border-radius: 10px !important;
     background-color: transparent;
@@ -135,6 +141,10 @@
         background-color: #D4E7C5 !important;
         border-color: #BFD8AF !important;
         color: #fff !important;
+    }
+
+    .profile-card-button:active {
+       border: 0 !important;
     }
 
 .active {
