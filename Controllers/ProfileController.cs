@@ -11,6 +11,8 @@ namespace EvoWeb.Controllers
             bool valid = await Valid();
             ViewBag.CurrentContext = HttpContext;
 
+            bool self = (user.ToLower() == CookieManager.GetCookie(HttpContext, "self"));
+
             if (valid)
             {
 
@@ -27,6 +29,10 @@ namespace EvoWeb.Controllers
                 ViewBag.Bio = result.bio;
                 ViewBag.Followers = result.followers;
                 ViewBag.Following = result.following;
+                ViewBag.IsFollowing = result.isFollowing;
+                ViewBag.Self = self;
+                ViewBag.SessionID = CookieManager.GetCookie(HttpContext, "session_id");
+                ViewBag.TargetUsername = user;
 
                 return View();
             }

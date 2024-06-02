@@ -14,5 +14,6 @@
         public string pronouns { get; set; }
         public int followers { get; set; }
         public int following { get; set; }
+        public bool isFollowing { get; set; }
     }
 }

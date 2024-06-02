@@ -16,7 +16,7 @@ namespace EvoWeb.Controllers
         public IActionResult Index()
         {
             ViewBag.CurrentContext = HttpContext;
-            return View();
+            return RedirectToAction("Index", "Feed");
         }
 
         public IActionResult Privacy()

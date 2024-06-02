@@ -25,15 +25,40 @@
         <div class="middle-section">           
             <div class="profile-card text-center">
                 <img src="@ViewBag.BannerURL" class="banner" alt="Banner kép">
-                             
-                <div class="settings">
-                    <i class="fa-solid fa-gear"></i>
-                </div>
+
+
+                @{
+
+                    if (ViewBag.Self)
+                    {
+                        <div class="settings">
+                            <i class="fa-solid fa-gear"></i>
+                        </div>
+                    }
+
+
+                }
 
                 <div class="card-body profiledata">
                     <img src="@ViewBag.AvatarURL" alt="Profilkép" class="rounded-circle img-fluid mb-3 profile-picture">
 
-                    <button type="button" id="follow" onclick="follow();" class="btn btn-primary follow-button shadow-none"><i class="fa-solid fa-plus plusbutton" id="icon"></i></button>
+                    @{
+
+                        if(!ViewBag.Self)
+                        {
+                            if(ViewBag.IsFollowing)
+                            {
+                                <button type="button" id="follow" onclick="unfollow('@ViewBag.SessionID', '@ViewBag.TargetUsername');" class="btn btn-primary followed-button shadow-none"><i class="fa-solid fa-check tickbutton" id="icon"></i></button>
+
+                            } else
+                            {
+                                <button type="button" id="follow" onclick="follow('@ViewBag.SessionID', '@ViewBag.TargetUsername');" class="btn btn-primary follow-button shadow-none"><i class="fa-solid fa-plus plusbutton" id="icon"></i></button>
+                            }
+                            
+                        }
+
+
+                     }
 
                     <h1 class="card-title name">@ViewBag.DisplayName</h1>
                     <p class="card-text pronouns badge text-bg-secondary">@ViewBag.Pronouns</p>
@@ -41,7 +66,7 @@
                     <p class="card-text bio">@ViewBag.Bio</p>
                     <div class="d-flex justify-content-around stats">
                         <div>
-                            <span class="number">@ViewBag.Followers</span>
+                            <span id="follower-count" class="number">@ViewBag.Followers</span>
                             <span class="label">Követők</span>
                         </div>
                         <div>
