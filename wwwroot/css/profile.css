@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+a {
+    text-decoration: none !important;
+}
+
 .profile-card {
     background-color: #fff;
     border-bottom: 1px solid #D4E7C5;
@@ -97,9 +101,27 @@
     width: 3.1rem;
     height: 3.1rem;
     border: 1px solid #BFD8AF !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .followed-button {
+    position: relative;
+    z-index: 9999;
+    margin-left: -40px;
+    border-radius: 80px !important;
+    background-color: #fff !important;
+    border: none;
+    cursor: pointer;
+    color: #D4E7C5 !important;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid #D4E7C5;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.followed-button:focus {
     position: relative;
     z-index: 9999;
     margin-left: -40px;
@@ -122,11 +144,6 @@
     border: 1px solid #fff !important;
 }
 
-.follow-button:focus, .follow-button:active, followed-button:focus, followed-button:active {
-    outline: none !important;
-    box-shadow: none !important;
-    border: 1px solid #BFD8AF !important;
-}
 
 .profile-card-button {
     border-radius: 10px !important;
@@ -171,3 +188,136 @@
     .settings:hover {
         color: #D4E7C5;
     }
+
+.modal {
+    margin: auto;
+    display: none;
+    position: fixed;
+    z-index: 999999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 10px;
+    padding-top: 60px;
+}
+
+.follow-modal {
+    margin: auto;
+    display: none;
+    position: fixed;
+    z-index: 999999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 10px;
+    padding-top: 60px;
+}
+
+.follow-modal-content {
+    background-color: #fefefe;
+    margin: 30rem auto;
+    padding: 20px;
+    border: 2px solid #99BC85;
+    border-radius: 10px;
+    width: 10vw;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 2px solid #99BC85;
+    border-radius: 10px;
+    width: 40vw;
+}
+
+.close {
+    color: #99BC85;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: #99BC85;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.modal-label {
+    color: #99BC85;
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"],
+textarea,
+select {
+    resize: none;
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #D4E7C5;
+    border-radius: 10px;
+}
+
+    input[type="text"]:focus,
+    textarea:focus,
+    select:focus,
+    input[type="date"]:focus,
+    input[type="file"]:focus,
+    label.modal-label:focus {
+        outline: none;
+    }
+
+    .modal-label:focus,
+    input[type="text"]:focus,
+    textarea:focus,
+    select:focus,
+    input[type="date"]:focus,
+    input[type="file"]:focus,
+    label.modal-label:focus {
+        border: 1px solid #99BC85; 
+    }
+
+.modal-button {
+    background-color: #99BC85;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+    .modal-button:hover {
+        background-color: #D4E7C5;
+    }
+
+.modal-button-close {
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: lightgrey;
+}
+
+    .modal-button-close:hover {
+        background-color: darkgrey;
+    }
+
+input[type="date"] {
+    border: 1px solid #D4E7C5 !important;
+    border-radius: 6px !important;
+    width: 16rem;
+}

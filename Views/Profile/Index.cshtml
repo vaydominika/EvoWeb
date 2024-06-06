@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/5b788c8dd4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="~/css/profile.css">
     <script src="~/js/profilepage.js"></script>
 </head>
@@ -32,7 +34,38 @@
                     if (ViewBag.Self)
                     {
                         <div class="settings">
-                            <i class="fa-solid fa-gear"></i>
+                            <i class="fa-solid fa-gear" id="settings-button"></i>
+                        </div>
+
+                        <div id="settings-modal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <form id="settings-form">
+                                    <label class="modal-label" for="display-name">Display Name:</label>
+                                    <input type="text" id="display-name" name="display-name" value="@ViewBag.DisplayName">
+
+                                    <label class="modal-label" for="bio">Bio:</label>
+                                    <textarea id="bio" name="bio" rows="4" cols="50">@ViewBag.Bio</textarea>
+
+                                    <label class="modal-label" for="pronouns">Pronouns:</label>
+                                    <input type="text" id="pronouns" name="pronouns" value="@ViewBag.Pronouns">
+
+                                    <label class="modal-label" for="location">Location:</label>
+                                    <input type="text" id="location" name="location">
+
+                                    <label class="modal-label" for="date-of-birth">Date of Birth:</label>
+                                    <input type="date" id="date-of-birth" name="date-of-birth" value="@ViewBag.DateOfBirth">
+
+                                    <label class="modal-label" for="profile-picture">Profile Picture:</label>
+                                    <input type="file" id="profile-picture" name="profile-picture" value="@ViewBag.AvatarURL">
+
+                                    <label class="modal-label" for="banner">Banner:</label>
+                                    <input type="file" id="banner" name="banner" value="@ViewBag.BannerURL">
+
+                                    <button class="modal-button-close" type="submit">Close</button>
+                                    <button class="modal-button" type="submit">Save</button>                               
+                                </form>
+                            </div>
                         </div>
                     }
 
@@ -67,11 +100,20 @@
                     <div class="d-flex justify-content-around stats">
                         <div>
                             <span id="follower-count" class="number">@ViewBag.Followers</span>
-                            <span class="label">Követők</span>
+                            <a href="#followModal"><span class="label" id="followers-label">Followers</span></a>
                         </div>
                         <div>
                             <span class="number">@ViewBag.Following</span>
-                            <span class="label">Követések</span>
+                            <a href="#followModal"><span class="label" id="following-label">Following</span></a>
+                        </div>
+                    </div>
+
+                    <div id="followModal" class="follow-modal">
+                        <div class="follow-modal-content">
+                            <span class="close">&times;</span>
+                            <div id="followModalBody">
+                                <!-- Modal content will be inserted here -->
+                            </div>
                         </div>
                     </div>
 

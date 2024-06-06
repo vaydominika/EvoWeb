@@ -27,6 +27,7 @@ namespace EvoWeb.Controllers
                 ViewBag.Pronouns = result.pronouns;
                 ViewBag.Username = result.username;
                 ViewBag.Bio = result.bio;
+                ViewBag.DateOfBirth = result.dateOfBirth;
                 ViewBag.Followers = result.followers;
                 ViewBag.Following = result.following;
                 ViewBag.IsFollowing = result.isFollowing;

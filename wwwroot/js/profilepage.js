@@ -1,4 +1,70 @@
-﻿function follow(sessionid, targetusername) {
+﻿document.addEventListener('DOMContentLoaded', (event) => {
+    const modal = document.getElementById("settings-modal");
+    const btn = document.getElementById("settings-button");
+    const span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Settings Modal Script
+    const settingsModal = document.getElementById("settings-modal");
+    const settingsBtn = document.getElementById("settings-button");
+    const settingsSpan = document.getElementsByClassName("close")[0];
+
+    settingsBtn.onclick = function () {
+        settingsModal.style.display = "block";
+    }
+
+    settingsSpan.onclick = function () {
+        settingsModal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == settingsModal) {
+            settingsModal.style.display = "none";
+        }
+    }
+
+    // Followers and Following Modal Script
+    var followModal = document.getElementById("followModal");
+    var followersLabel = document.getElementById("followers-label");
+    var followingLabel = document.getElementById("following-label");
+    var followSpan = followModal.getElementsByClassName("close")[0];
+
+    followersLabel.onclick = function () {
+        document.getElementById("followModalBody").innerHTML = `<h2>Followers</h2><p>Here is the list of followers...</p>`;
+        followModal.style.display = "block";
+    }
+
+    followingLabel.onclick = function () {
+        document.getElementById("followModalBody").innerHTML = `<h2>Following</h2><p>Here is the list of following...</p>`;
+        followModal.style.display = "block";
+    }
+
+    followSpan.onclick = function () {
+        followModal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == followModal) {
+            followModal.style.display = "none";
+        }
+    }
+});
+function follow(sessionid, targetusername) {
     var followbutton = document.getElementById("follow");
     var icon = document.getElementById("icon");
     var followercount = document.getElementById("follower-count");

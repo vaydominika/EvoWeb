@@ -132,6 +132,7 @@
     padding-right: 40px !important;
     width: 50rem;
     margin: auto;
+    border: 1px solid #D4E7C5;
 }
 
 .textarea-container {
