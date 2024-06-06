@@ -25,7 +25,7 @@ function unfollow(sessionid, targetusername) {
     icon.className = "fa-solid fa-plus plusbutton";
     let currentCount = parseInt(followercount.textContent, 10);
     currentCount = currentCount - 1;
-    followercount.textContent = currentCount;
+    followercount.textContent = currentCount;1
     unfollow.onclick = function () {
         follow(sessionid, targetusername);
     };
