@@ -154,6 +154,45 @@ function sendFollowRequest(sessionid, targetusername) {
     newRequest.send();
 }
 
+function sendSaveProfileRequest(sessionid) {
+
+    var displayName = document.getElementById("display-name").value;
+    var bio = document.getElementById("bio").value;
+    var pronouns = document.getElementById("pronouns").value;
+    var location = document.getElementById("location").value;
+    var dateOfBirth = document.getElementById("date-of-birth").value;
+    var avatarUrl = "https://cdn.reigdev.hu/evoweb/img/generic-avatar.jpg";
+    var bannerUrl = "https://cdn.reigdev.hu/evoweb/img/generic-banner.jpg";
+
+    var loginURL = "http://localhost:5232/apimirror/v1/SetProfileMirror/?sessionid=" + sessionid + "&displayname=" + displayName + "&bio=" + bio + "&pronouns=" + pronouns +
+        "&location=" + location + "&dateofbirth=" + dateOfBirth + "&avatarurl=" + avatarUrl + "&bannerurl=" + bannerUrl;
+
+    var newRequest = new XMLHttpRequest();
+    newRequest.open('GET', loginURL, true);
+    newRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    newRequest.onload = function () {
+
+        if (newRequest.status >= 200 && newRequest.status < 400) {
+            var response = JSON.parse(newRequest.responseText);
+            if (response.error) {
+                console.log("error while saving profile data (maybe you set something to empty?)");
+            }
+            location.reload();
+        }
+        else {
+            console.log("error while saving profile data (maybe you set something to empty?)");
+        }
+
+
+    };
+
+    newRequest.send();
+
+
+
+}
+
 
 function sendUnFollowRequest(sessionid, targetusername) {
 

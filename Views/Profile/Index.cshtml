@@ -45,13 +45,13 @@
                                     <input type="text" id="display-name" name="display-name" value="@ViewBag.DisplayName">
 
                                     <label class="modal-label" for="bio">Bio:</label>
-                                    <textarea id="bio" name="bio" rows="4" cols="50">@ViewBag.Bio</textarea>
+                                    <textarea id="bio" name="bio" rows="4" cols="50" value="@ViewBag.Bio">@ViewBag.Bio</textarea>
 
                                     <label class="modal-label" for="pronouns">Pronouns:</label>
                                     <input type="text" id="pronouns" name="pronouns" value="@ViewBag.Pronouns">
 
                                     <label class="modal-label" for="location">Location:</label>
-                                    <input type="text" id="location" name="location">
+                                    <input type="text" id="location" name="location" value="@ViewBag.Location">
 
                                     <label class="modal-label" for="date-of-birth">Date of Birth:</label>
                                     <input type="date" id="date-of-birth" name="date-of-birth" value="@ViewBag.DateOfBirth">
@@ -62,8 +62,8 @@
                                     <label class="modal-label" for="banner">Banner:</label>
                                     <input type="file" id="banner" name="banner" value="@ViewBag.BannerURL">
 
-                                    <button class="modal-button-close" type="submit">Close</button>
-                                    <button class="modal-button" type="submit">Save</button>                               
+                                    <button class="modal-button-close" onclick="event.preventDefault(); document.getElementById('settings-modal').style.display = 'none';">Close</button>
+                                    <button class="modal-button" onclick="event.preventDefault(); sendSaveProfileRequest('@ViewBag.SessionID'); window.location.href = window.location.href;">Save</button>
                                 </form>
                             </div>
                         </div>
