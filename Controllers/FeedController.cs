@@ -14,6 +14,25 @@ namespace EvoWeb.Controllers
 
             if (valid)
             {
+                FeedRequest checkprofile = new FeedRequest();
+                await checkprofile.GetDataFromApi(CookieManager.GetCookie(HttpContext, "session_id"));
+
+                FeedResponse result = checkprofile.GetResult();
+
+                string feed = "";
+
+                if (result != null)
+                {
+                    feed = result.feed;
+                }
+                else
+                {
+                    feed = "";
+                }
+
+                ViewBag.Feed = feed;
+                ViewBag.SessionID = CookieManager.GetCookie(HttpContext, "session_id");
+
                 return View();
             }
             else

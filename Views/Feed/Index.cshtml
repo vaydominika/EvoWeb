@@ -37,9 +37,31 @@
                         <label for="postFile" type="button" class="btn btn-outline-primary feed-button"><i class="fas fa-file"></i></label>
                         <input type="file" class="form-control-file" id="postFile" style="display: none;">
 
-                        <button type="button" class="btn btn-outline-primary feed-button">Post</button>
+                        <button type="button" class="btn btn-outline-primary feed-button" onclick="sendPostRequest('@ViewBag.SessionID');">Post</button>
                     </div>
             </div>
+
+
+            <div id="feed-posts-container">
+
+
+            </div>
+
+            <script>
+
+                function unescapeHtml(escapedString) {
+                    var tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = escapedString;
+                    return tempDiv.textContent || tempDiv.innerText || "";
+                }
+
+                var posts = "@ViewBag.Feed";
+
+                var unescapedPosts = unescapeHtml(posts);
+
+                document.getElementById('feed-posts-container').innerHTML = unescapedPosts;
+
+            </script>
 
             <div class="card post">
                 <div class="card-header text-center">

@@ -78,6 +78,38 @@ function unlike(id) {
         like(id);
     };
 }
+ 
+function sendPostRequest(sessionid) {
+
+    var body = document.getElementById("post-area").value;
+
+    var loginURL = "http://localhost:5232/apimirror/v1/PostMirror/?sessionid=" + sessionid + "&body=" + body;
+
+    var newRequest = new XMLHttpRequest();
+    newRequest.open('GET', loginURL, true);
+    newRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    newRequest.onload = function () {
+
+        if (newRequest.status >= 200 && newRequest.status < 400) {
+            var response = JSON.parse(newRequest.responseText);
+            if (response.error) {
+                console.log("error while sending post data (maybe you set something to empty?)");
+            }
+            window.location.reload();
+        }
+        else {
+            console.log("error while sending post data (maybe you set something to empty?)");
+        }
+
+
+    };
+
+    newRequest.send();
+
+
+
+}
 
 
 
