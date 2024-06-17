@@ -13,6 +13,7 @@
     .user-list li img {
         border-radius: 40px;
         margin-right: 10px;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
     }
 
 li, ul {
