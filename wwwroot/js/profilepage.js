@@ -1,24 +1,4 @@
 ﻿document.addEventListener('DOMContentLoaded', (event) => {
-    const modal = document.getElementById("settings-modal");
-    const btn = document.getElementById("settings-button");
-    const span = document.getElementsByClassName("close")[0];
-
-    btn.onclick = function () {
-        modal.style.display = "block";
-    }
-
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
-
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-});
-
-document.addEventListener('DOMContentLoaded', (event) => {
     // Settings Modal Script
     const settingsModal = document.getElementById("settings-modal");
     const settingsBtn = document.getElementById("settings-button");
@@ -45,12 +25,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
     followersLabel.onclick = function () {
-        document.getElementById("followModalBody").innerHTML = `<h2>Followers</h2><p>Here is the list of followers...</p>`;
+        document.getElementById("modalContent").innerHTML = `<h2>Followers</h2><p>Here is the list of followers...</p>`;
         followModal.style.display = "block";
     }
 
     followingLabel.onclick = function () {
-        document.getElementById("followModalBody").innerHTML = `<h2>Following</h2><p>Here is the list of following...</p>`;
+        document.getElementById("modalContent").innerHTML = `<h2>Following</h2><p>Here is the list of following...</p>`;
         followModal.style.display = "block";
     }
 
@@ -61,6 +41,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 });
+
 function follow(sessionid, targetusername) {
     var followbutton = document.getElementById("follow");
     var icon = document.getElementById("icon");
