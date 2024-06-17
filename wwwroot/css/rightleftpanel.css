@@ -24,9 +24,23 @@ a {
     text-decoration: none !important;
 }
 
+p, h5 {
+    font-size: 16px;
+}
+
 
     a:hover {
         color: darkgreen !important;
     }
 
+.dropdown-toggle.notifications::after {
+    display: none !important;
+}
 
+.notifications-badge {
+    border-radius: 50px !important;
+    background-color: indianred;
+    transform: scale(0.8); /* Kicsinyíti az elemet 80%-ra */
+    display: inline-block;
+    margin: auto;
+}

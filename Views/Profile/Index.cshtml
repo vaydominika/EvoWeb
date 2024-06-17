@@ -22,8 +22,6 @@
             }
         </div>
 
-        <div class="separator"></div>
-
         <div class="middle-section">           
             <div class="profile-card text-center">
                 <img src="@ViewBag.BannerURL" class="banner" alt="Banner kép">
@@ -108,15 +106,6 @@
                         </div>
                     </div>
 
-                    <div id="followModal" class="follow-modal">
-                        <div class="follow-modal-content">
-                            <span class="close">&times;</span>
-                            <div id="followModalBody">
-                                <!-- Modal content will be inserted here -->
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="profile-divider"></div>
                     <div class="profile-button">
                         <button id="posts" onclick="posts();" type="button" class="btn btn-outline-primary profile-card-button shadow-none active">Posts</button>
@@ -125,10 +114,51 @@
                     </div>
                 </div>
             </div>
+
+            <div class="card post">
+                <div class="card-header text-center">
+                    <p class="card-text"> <img src="https://cdn.reigdev.hu/evoweb/img/generic-avatar.jpg" alt="User 1" class="user-post"> <i class="fa-solid fa-at"></i> User </p>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+                <div class="card-footer text-body-secondary text-center">
+                    <i class="fa-regular fa-heart postreaction" id="hjhchm" onclick="like('hjhchm');"></i>
+                    <i class="fa-solid fa-comment postreaction"></i>
+                    <i class="fa-solid fa-share postreaction"></i>
+                </div>
+            </div>
+
+            <div class="card post">
+                <div class="card-header text-center">
+                    <p class="card-text"> <img src="https://cdn.reigdev.hu/evoweb/img/generic-avatar.jpg" alt="User 1" class="user-post"> <i class="fa-solid fa-at"></i> User </p>
+                </div>
+                <div class="card-body">
+                    <img src="https://download.cdn-shop.com/media/web_images/uk/my-picture/structured-data/framed-picture-4x3.jpg" class="post-img" />
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+                <div class="card-footer text-body-secondary text-center">
+                    <i class="fa-regular fa-heart postreaction" id="dgssdg" onclick="like('dgssdg');"></i>
+                    <i class="fa-solid fa-comment postreaction"></i>
+                    <i class="fa-solid fa-share postreaction"></i>
+                </div>
+            </div>
+
+            <div class="card post">
+                <div class="card-header text-center">
+                    <p class="card-text"> <img src="https://cdn.reigdev.hu/evoweb/img/generic-avatar.jpg" alt="User 1" class="user-post"> <i class="fa-solid fa-at"></i> User </p>
+                </div>
+                <div class="card-body">
+                    <img src="https://download.cdn-shop.com/media/web_images/uk/my-picture/structured-data/framed-picture-4x3.jpg" class="post-img" />
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+                <div class="card-footer text-body-secondary text-center">
+                    <i class="fa-regular fa-heart postreaction" id="dgssdg" onclick="like('dgssdg');"></i>
+                    <i class="fa-solid fa-comment postreaction"></i>
+                    <i class="fa-solid fa-share postreaction"></i>
+                </div>
+            </div>
         </div>
-
-        <div class="separator"></div>
-
         <div class="right-section">
             <!-- Tartalom a jobb oldalon -->
             @{

@@ -6,13 +6,14 @@
 
 .container {
     display: flex;
-    height: 100vh; /* Teljes magasság kitöltése */
+    height: 100%; /* Teljes magasság kitöltése */
 }
 
 .left-section, .right-section {
     flex: 1; /* 1 arányú növekedés */
     max-width: 25%; /* Maximum 30% szélesség */
     min-width: 25%; /* Minimum 30% szélesség */
+    height: 100%;
 }
 
 .middle-section {
@@ -21,13 +22,7 @@
     min-width: 50%; /* Minimum 40% szélesség */
     border-right: 1px solid #D4E7C5;
     border-left: 1px solid #D4E7C5;
-}
-
-.separator {
-    width: 1px;
-    background-color: #D4E7C5;
-    height: 100vh; /* Teljes magasság kitöltése */
-    margin: 0; /* Eltolás a két oldalon */
+    height: 100%;
 }
 
 .card {
@@ -35,6 +30,7 @@
     background-color: #D4E7C5;
     outline-color: darkgreen;
     margin: 30px auto !important;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.1);
 }
 
 .post-username {
@@ -44,6 +40,7 @@
 .post {
     width: 50rem !important;
     margin: auto;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.1);
 }
 
     .post-img {
@@ -80,6 +77,7 @@
     background-color: white;
     border-bottom: 1px solid #D4E7C5;
     position: relative;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
     .post-window .post-header {

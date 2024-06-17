@@ -1,6 +1,14 @@
-﻿.input-group {
+﻿body {
+    text-shadow: 1px 1px #ededed;
+}
+
+.input-group {
     width: 200px;
     position: relative;
+}
+
+input, form-control {
+    border-radius: 10px 0px 0px 10px !important;
 }
 
 .dropdown-menu {
@@ -21,6 +29,7 @@
     background-color: #D4E7C5;
     border-radius: 0px 0px 10px 10px !important;
     margin-bottom: 0 !important;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 li, ul {
@@ -42,3 +51,33 @@ a {
     a:hover {
         color: darkgreen !important;
     }
+
+/* Eltünteti a nyilat a dropdown-toggle osztályból */
+.dropdown-toggle.no-decoration::after {
+    display: none !important;
+}
+
+.search-button {
+    border: 1px solid lightgray; /* Állítsd be a border színét */
+    background-color: #E1F0DA;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0;
+    border-radius: 0px 10px 10px 0px !important;
+}
+
+.navbar input[type="text"].form-control {
+    resize: none;
+    width: auto; /* vagy a kívánt szélesség */
+    padding: 10px;
+    margin-top: 0; /* vagy a kívánt margin érték */
+    margin-bottom: 0; /* vagy a kívánt margin érték */
+    border: 1px solid lightgray; /* alapértelmezetten a Bootstrap .form-control osztály már definiálja a keretet */
+    border-radius: 0; /* vagy a kívánt border-radius */
+}
+
+    .navbar input[type="text"].form-control:focus {
+        outline: none;
+        border-color: transparent; /* vagy a kívánt focus border színe */
+    }
+
