@@ -115,49 +115,29 @@
                 </div>
             </div>
 
-            <div class="card post">
-                <div class="card-header text-center">
-                    <p class="card-text"> <img src="https://cdn.reigdev.hu/evoweb/img/generic-avatar.jpg" alt="User 1" class="user-post"> <i class="fa-solid fa-at"></i> User </p>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                </div>
-                <div class="card-footer text-body-secondary text-center">
-                    <i class="fa-regular fa-heart postreaction" id="hjhchm" onclick="like('hjhchm');"></i>
-                    <i class="fa-solid fa-comment postreaction"></i>
-                    <i class="fa-solid fa-share postreaction"></i>
-                </div>
+            <div id="feed-posts-container">
+
+
             </div>
 
-            <div class="card post">
-                <div class="card-header text-center">
-                    <p class="card-text"> <img src="https://cdn.reigdev.hu/evoweb/img/generic-avatar.jpg" alt="User 1" class="user-post"> <i class="fa-solid fa-at"></i> User </p>
-                </div>
-                <div class="card-body">
-                    <img src="https://download.cdn-shop.com/media/web_images/uk/my-picture/structured-data/framed-picture-4x3.jpg" class="post-img" />
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                </div>
-                <div class="card-footer text-body-secondary text-center">
-                    <i class="fa-regular fa-heart postreaction" id="dgssdg" onclick="like('dgssdg');"></i>
-                    <i class="fa-solid fa-comment postreaction"></i>
-                    <i class="fa-solid fa-share postreaction"></i>
-                </div>
-            </div>
+            <script>
 
-            <div class="card post">
-                <div class="card-header text-center">
-                    <p class="card-text"> <img src="https://cdn.reigdev.hu/evoweb/img/generic-avatar.jpg" alt="User 1" class="user-post"> <i class="fa-solid fa-at"></i> User </p>
-                </div>
-                <div class="card-body">
-                    <img src="https://download.cdn-shop.com/media/web_images/uk/my-picture/structured-data/framed-picture-4x3.jpg" class="post-img" />
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                </div>
-                <div class="card-footer text-body-secondary text-center">
-                    <i class="fa-regular fa-heart postreaction" id="dgssdg" onclick="like('dgssdg');"></i>
-                    <i class="fa-solid fa-comment postreaction"></i>
-                    <i class="fa-solid fa-share postreaction"></i>
-                </div>
-            </div>
+                function unescapeHtml(escapedString) {
+                    var tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = escapedString;
+                    return tempDiv.textContent || tempDiv.innerText || "";
+                }
+
+                var posts = "@ViewBag.Posts";
+
+                var unescapedPosts = unescapeHtml(posts);
+
+                document.getElementById('feed-posts-container').innerHTML = unescapedPosts;
+
+            </script>
+
+
+
         </div>
         <div class="right-section">
             <!-- Tartalom a jobb oldalon -->

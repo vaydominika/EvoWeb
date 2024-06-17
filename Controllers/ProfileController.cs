@@ -35,6 +35,7 @@ namespace EvoWeb.Controllers
                 ViewBag.Self = self;
                 ViewBag.SessionID = CookieManager.GetCookie(HttpContext, "session_id");
                 ViewBag.TargetUsername = user;
+                ViewBag.Posts = result.posts;
 
                 return View();
             }
