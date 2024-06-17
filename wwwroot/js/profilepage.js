@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     var followModal = document.getElementById("followModal");
     var followersLabel = document.getElementById("followers-label");
     var followingLabel = document.getElementById("following-label");
-    var followSpan = followModal.getElementsByClassName("close")[0];
+
 
     followersLabel.onclick = function () {
         document.getElementById("followModalBody").innerHTML = `<h2>Followers</h2><p>Here is the list of followers...</p>`;
@@ -54,9 +54,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         followModal.style.display = "block";
     }
 
-    followSpan.onclick = function () {
-        followModal.style.display = "none";
-    }
 
     window.onclick = function (event) {
         if (event.target == followModal) {
