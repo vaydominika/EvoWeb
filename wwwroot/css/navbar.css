@@ -6,13 +6,13 @@ span {
     text-shadow: none;
 }
 
+.searchbar {
+    border-radius: 10px 0px 0px 10px !important;
+}
+
 .input-group {
     width: 200px;
     position: relative;
-}
-
-input, form-control {
-    border-radius: 10px 0px 0px 10px !important;
 }
 
 .dropdown-menu {
