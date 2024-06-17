@@ -62,6 +62,39 @@
             });
         });
         
+        function healthCheck() {
+
+            var titletext = document.getElementById("titletext");
+
+            var loginURL = "http://localhost:5232/apimirror/v1/HealthMirror";
+
+            var newRequest = new XMLHttpRequest();
+            newRequest.open('GET', loginURL, true);
+            newRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+            newRequest.onload = function () {
+
+                if (newRequest.status >= 200 && newRequest.status < 400) {
+                    var response = JSON.parse(newRequest.responseText);
+
+                    if (response.error) {
+                        titletext.style.setProperty('color', 'red', 'important');
+                    } else {
+                        titletext.style.setProperty('color', 'forestgreen', 'important');
+                    }
+                }
+                else {
+                    titletext.style.setProperty('color', 'red', 'important');
+                }
+
+
+            };
+
+            newRequest.send();
+
+        }
+
+        setInterval(healthCheck, 3000);
 
         function autoComplete(query) {
 
