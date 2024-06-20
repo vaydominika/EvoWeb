@@ -34,8 +34,14 @@
 
 function like(id) {
     var likebutton = document.getElementById(id);
+    var liketext = document.getElementById("like-counter-" + id);
 
     likebutton.className = "fa-solid fa-heart postreaction liked";
+
+    let currentCount = parseInt(liketext.textContent, 10);
+    currentCount++;
+    liketext.textContent = currentCount;
+
     likebutton.onclick = function () {
         unlike(id);
     };
@@ -43,8 +49,14 @@ function like(id) {
 
 function unlike(id) {
     var likebutton = document.getElementById(id);
+    var liketext = document.getElementById("like-counter-" + id);
 
     likebutton.className = "fa-regular fa-heart postreaction";
+
+    let currentCount = parseInt(liketext.textContent, 10);
+    currentCount = currentCount - 1;
+    liketext.textContent = currentCount;
+
     likebutton.onclick = function () {
         like(id);
     };

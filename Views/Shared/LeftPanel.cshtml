@@ -4,11 +4,20 @@
     <div class="card-body">
         <a href="/feed"><h5 class="card-title"><i class="fa-solid fa-house"></i> Main Page</h5></a>
         <li><hr class="dropdown-divider"></li>
-        <a class="dropdown-toggle notifications" href="#">
+        
+        <div class="dropdown">
+            <a class="dropdown-toggle notifications" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <p class="card-text">
                 <i class="fa-regular fa-bell notifications-icon"></i> Notifications<span class="badge text-bg-secondary notifications-badge" id="notificationcounter">10</span>
+                <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">first notification</a></li>
+                <li><a class="dropdown-item" href="#">second notification</a></li>
+                <li><a class="dropdown-item" href="#">third notification</a></li>
+                </ul>
             </p>
         </a>
+
+        </div>
         <a href="/messages"><p class="card-text"><i class="fa-solid fa-inbox"></i> Messages</p></a>
     </div>
 </div>
