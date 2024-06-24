@@ -16,6 +16,7 @@
         box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
     }
 
+
 li, ul {
     list-style: none;
 }
@@ -45,3 +46,27 @@ p, h5 {
     display: inline-block;
     margin: auto;
 }
+
+.dropdown-toggle.no-decoration::after {
+    display: none !important;
+}
+
+.dropdown-divider {
+    color: #99BC85 !important;
+}
+
+.dropdown-notifications {
+    width: 300px; /* Állítsd be a kívánt szélességet */
+    padding: 10px; /* Padding a menü belső tartalmához */
+    border-color: #99BC85;
+}
+
+    .dropdown-notifications .dropdown-item {
+        padding: 10px; /* Minden oldalról egyenlő távolság */
+        white-space: normal; /* Megengedi a szöveg tördelését */
+        word-wrap: break-word; /* Szükség esetén töri a szöveget */
+    }
+
+    .dropdown-notifications.i {
+        color: #99BC85 !important;
+    }

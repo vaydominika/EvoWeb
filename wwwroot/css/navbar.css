@@ -85,3 +85,17 @@ a {
         border-color: transparent; /* vagy a kívánt focus border színe */
     }
 
+.dropdown-divider {
+    color: #99BC85 !important;
+}
+
+.dropdown-profile {
+    padding: 10px; /* Padding a menü belső tartalmához */
+    border-color: #99BC85;
+}
+
+    .dropdown-profile .dropdown-item {
+        padding: 10px; /* Minden oldalról egyenlő távolság */
+        white-space: normal; /* Megengedi a szöveg tördelését */
+        word-wrap: break-word; /* Szükség esetén töri a szöveget */
+    }
