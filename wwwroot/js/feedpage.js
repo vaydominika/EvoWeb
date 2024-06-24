@@ -32,9 +32,12 @@
 // Hívjuk meg a függvényt, hogy megjelenítse az időt
 
 
-function like(id) {
+function like(sessionid, id) {
     var likebutton = document.getElementById(id);
     var liketext = document.getElementById("like-counter-" + id);
+
+    const myArray = id.split("-");
+    var realid = myArray[1];
 
     likebutton.className = "fa-solid fa-heart postreaction liked";
 
@@ -43,13 +46,40 @@ function like(id) {
     liketext.textContent = currentCount;
 
     likebutton.onclick = function () {
-        unlike(id);
+        unlike(sessionid, id);
     };
+
+    var loginURL = "http://localhost:5232/apimirror/v1/LikeMirror/?sessionid=" + sessionid + "&postid=" + realid;
+
+    var newRequest = new XMLHttpRequest();
+    newRequest.open('GET', loginURL, true);
+    newRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    newRequest.onload = function () {
+
+        if (newRequest.status >= 200 && newRequest.status < 400) {
+            var response = JSON.parse(newRequest.responseText);
+            if (response.error) {
+                console.log("error while sending like data (maybe you set something to empty?)");
+            }
+        }
+        else {
+            console.log("error while sending like data (maybe you set something to empty?)");
+        }
+
+
+    };
+
+    newRequest.send();
+
 }
 
-function unlike(id) {
+function unlike(sessionid, id) {
     var likebutton = document.getElementById(id);
     var liketext = document.getElementById("like-counter-" + id);
+
+    const myArray = id.split("-");
+    var realid = myArray[1];
 
     likebutton.className = "fa-regular fa-heart postreaction";
 
@@ -58,8 +88,31 @@ function unlike(id) {
     liketext.textContent = currentCount;
 
     likebutton.onclick = function () {
-        like(id);
+        like(sessionid, id);
     };
+
+    var loginURL = "http://localhost:5232/apimirror/v1/RevokeLikeMirror/?sessionid=" + sessionid + "&postid=" + realid;
+
+    var newRequest = new XMLHttpRequest();
+    newRequest.open('GET', loginURL, true);
+    newRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    newRequest.onload = function () {
+
+        if (newRequest.status >= 200 && newRequest.status < 400) {
+            var response = JSON.parse(newRequest.responseText);
+            if (response.error) {
+                console.log("error while sending revokelike data (maybe you set something to empty?)");
+            }
+        }
+        else {
+            console.log("error while sending revokelike data (maybe you set something to empty?)");
+        }
+
+
+    };
+
+    newRequest.send();
 }
  
 function sendPostRequest(sessionid) {
