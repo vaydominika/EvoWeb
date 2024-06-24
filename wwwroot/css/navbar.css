@@ -99,3 +99,18 @@ a {
         white-space: normal; /* Megengedi a szöveg tördelését */
         word-wrap: break-word; /* Szükség esetén töri a szöveget */
     }
+
+.dropdown-search {
+    width: 230px !important;
+    padding: 10px; /* Padding a menü belső tartalmához */
+    border-color: #99BC85;
+}
+
+    .dropdown-search .dropdown-item {
+        padding: 10px; /* Minden oldalról egyenlő távolság */
+        white-space: nowrap; /* Megakadályozza a szöveg tördelését */
+        overflow: hidden; /* Elrejti a túlcsorduló tartalmat */
+        text-overflow: ellipsis; /* Három pontot jelenít meg a túlcsorduló szöveg végén */
+        max-width: 220px; /* Maximális szélesség beállítása */
+        display: block; /* Blokk szintű elem */
+    }
