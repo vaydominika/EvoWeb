@@ -34,11 +34,17 @@
 
 function like(sessionid, id) {
     var likebutton = document.getElementById(id);
+    var liketext = document.getElementById("like-counter-" + id);
 
     const myArray = id.split("-");
     var realid = myArray[1];
 
     likebutton.className = "fa-solid fa-heart postreaction liked";
+
+    let currentCount = parseInt(liketext.textContent, 10);
+    currentCount++;
+    liketext.textContent = currentCount;
+
     likebutton.onclick = function () {
         unlike(sessionid, id);
     };
@@ -70,11 +76,17 @@ function like(sessionid, id) {
 
 function unlike(sessionid, id) {
     var likebutton = document.getElementById(id);
+    var liketext = document.getElementById("like-counter-" + id);
 
     const myArray = id.split("-");
     var realid = myArray[1];
 
     likebutton.className = "fa-regular fa-heart postreaction";
+
+    let currentCount = parseInt(liketext.textContent, 10);
+    currentCount = currentCount - 1;
+    liketext.textContent = currentCount;
+
     likebutton.onclick = function () {
         like(sessionid, id);
     };

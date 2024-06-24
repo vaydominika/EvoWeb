@@ -4,11 +4,21 @@
     <div class="card-body">
         <a href="/feed"><h5 class="card-title"><i class="fa-solid fa-house"></i> Main Page</h5></a>
         <li><hr class="dropdown-divider"></li>
-        <a class="dropdown-toggle notifications" href="#">
+        
+        <div class="dropdown">
+            <a class="dropdown-toggle no-decoration" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <p class="card-text">
                 <i class="fa-regular fa-bell notifications-icon"></i> Notifications<span class="badge text-bg-secondary notifications-badge" id="notificationcounter">10</span>
-            </p>
-        </a>
+                </p>
+            </a>
+                <ul class="dropdown-menu dropdown-notifications">
+                <li><a class="dropdown-item"><i class="fa-solid fa-plus"></i> <b>username</b> started following you</a></li>
+                <li><a class="dropdown-item"><i class="fa-solid fa-heart"></i> <b>username</b> liked your post</a></li>
+                <li><a class="dropdown-item"><i class="fa-solid fa-comment"></i> <b>username</b> commented on your post</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item">See All...</a></li>
+                </ul>
+        </div>
         <a href="/messages"><p class="card-text"><i class="fa-solid fa-inbox"></i> Messages</p></a>
     </div>
 </div>
