@@ -138,9 +138,9 @@
                     return tempDiv.textContent || tempDiv.innerText || "";
                 }
 
-                var posts = "@ViewBag.Posts";
+                var postsa = "@ViewBag.Posts";
 
-                var unescapedPosts = unescapeHtml(posts);
+                var unescapedPosts = unescapeHtml(postsa);
 
                 document.getElementById('feed-posts-container').innerHTML = unescapedPosts;
 
