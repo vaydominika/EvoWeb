@@ -6,23 +6,25 @@
 
 .container {
     display: flex;
-    height: 100%; /* Teljes magasság kitöltése */
+    align-items: stretch !important; /* Biztosítja, hogy a szekciók teljes magasságban nyúljanak */
+    min-height: 100vh; /* Minimum 100% viewport magasság */
 }
 
 .left-section, .right-section {
     flex: 1; /* 1 arányú növekedés */
-    max-width: 25%; /* Maximum 30% szélesség */
-    min-width: 25%; /* Minimum 30% szélesség */
-    height: 100%;
+    max-width: 25%; /* Maximum 25% szélesség */
+    min-width: 25%; /* Minimum 25% szélesség */
+    height: 100%; /* Biztosítja, hogy a szekciók teljes magasságot kitöltsék */
 }
 
 .middle-section {
     flex: 1; /* 1 arányú növekedés */
-    max-width: 50%; /* Maximum 40% szélesség */
-    min-width: 50%; /* Minimum 40% szélesség */
+    max-width: 50%; /* Maximum 50% szélesség */
+    min-width: 50%; /* Minimum 50% szélesség */
     border-right: 1px solid #D4E7C5;
     border-left: 1px solid #D4E7C5;
-    height: 100%;
+    box-sizing: border-box !important; /* Biztosítja, hogy a borderek beleszámítanak a méretbe */
+    min-height: 100vh; /* Minimum 100% viewport magasság */
 }
 
 .card {

@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Views\Partial\" />
-    <Folder Include="wwwroot\img\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -114,3 +114,9 @@ a {
         max-width: 220px; /* Maximális szélesség beállítása */
         display: block; /* Blokk szintű elem */
     }
+
+.logo {
+    height: 5vh;
+    margin-top: -12px !important;
+
+}
