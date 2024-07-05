@@ -157,6 +157,7 @@ function sendSaveProfileRequest(sessionid) {
                 console.log("error while saving profile data (maybe you set something to empty?)");
             }
             location.reload();
+            window.location.href = window.location.href;
         }
         else {
             console.log("error while saving profile data (maybe you set something to empty?)");
